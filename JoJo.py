@@ -32,6 +32,7 @@ def speak(strr):
 def listen():
     with sr.Microphone() as source:
         try:
+            time.sleep(1.5)
             print("How Can I Help You Sir Tell Me I Am Listening......\n")
             speak("How Can I Help You Sir tell me i am listening")
             audio=r.listen(source)
