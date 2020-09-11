@@ -32,7 +32,7 @@ def speak(strr):
 def listen():
     with sr.Microphone() as source:
         try:
-            print("How Can I Help You Sir Tell Me I Am Listening\n")
+            print("How Can I Help You Sir Tell Me I Am Listening......\n")
             speak("How Can I Help You Sir tell me i am listening")
             audio=r.listen(source)
             text=r.recognize_google(audio,language='en-IN')
@@ -107,12 +107,12 @@ if __name__ == "__main__":
             speak("I Can Open Any Website For You")
             print("I Can Search Anything Over Internet For You")
             speak("I Can Search Anything Over Internet For You")
-            print("I Can Play Your Favourite Music")
-            speak("I Can Play Your Favourite Music")
             print("I Can Tell You About Your Plans For The Week")
             speak("I Can Tell You About Your Plans For The Week")
             print("I Can Push Your Repositries To Your Github")
             speak("I Can Push Your Repositries To Your Github")
+            print("I Can Play Your Favourite Music")
+            speak("I Can Play Your Favourite Music")
             print("I Can Set Reminders For You")
             speak("I Can Set Reminders For You")
             print("I Also Care For You, So I Will Remind You To Drink Water After Every 45 Minutes")
@@ -123,15 +123,13 @@ if __name__ == "__main__":
                 print(pn)
                 speak(pn)
         elif 'remind' in text:
+            with open("reminder.txt","a") as fh:
+                text.replace("remind","")
+                try:
+                    text.replace("jojo","")
+                except:
+                    pass
+                fh.write(f"{text}\n")
             print("Okay Sir I Will Remind You")
             speak("Okay Sir I Will Remind You")
     f.close()
-
-
-        
-        
-           
-
-    
-    
-    
